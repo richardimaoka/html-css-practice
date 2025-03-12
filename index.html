@@ -88,5 +88,21 @@
         felis in purus ultricies faucibus id non purus. Nam ut leo lacus.
       </p>
     </article>
+    <script>
+      const tl = new ScrollTimeline({
+        source: document.documentElement,
+      });
+
+      const el = document.documentElement;
+
+      el.animate(
+        {
+          opacity: [0, 1],
+        },
+        {
+          timeline: tl,
+        }
+      );
+    </script>
   </body>
 </html>
