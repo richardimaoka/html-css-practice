@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .scroll-container {
+        position: sticky;
+        top: 0;
+        container-type: scroll-state;
+
+        > nav {
+          @container scroll-state(stuck: top) {
+            background: blue;
+            color: white;
+          }
+        }
+      }
+
+      article {
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-container">
+      <nav>scroll container</nav>
+    </div>
+    <article>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+        condimentum diam at nisl vulputate varius nec quis justo. In tempus,
+        tellus nec luctus rhoncus, ante velit maximus erat, quis mattis urna
+        enim ut tellus. Nullam et dignissim lacus. Donec vitae lorem sit amet
+        neque sagittis ultricies. In porttitor luctus nulla, vel interdum lacus.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu
+        tincidunt lectus. Morbi in elementum augue, eu malesuada urna. Cras
+        laoreet nec sem tincidunt fringilla. Etiam rutrum lacus ante, sit amet
+        suscipit quam pulvinar et. Aenean ipsum felis, ornare eu cursus nec,
+        ultrices eget metus. Donec congue justo est.
+      </p>
+      <p>
+        Nullam vulputate sollicitudin enim, sit amet sodales elit iaculis
+        cursus. Sed sed rhoncus felis. Cras finibus vitae nulla vitae
+        sollicitudin. Curabitur eget velit scelerisque, iaculis turpis et,
+        consectetur dolor. Sed velit erat, interdum dictum faucibus non,
+        tristique ac magna. Sed non pharetra est, eu malesuada dolor. Duis eros
+        ligula, volutpat sit amet ultricies quis, venenatis et leo. Duis eget
+        erat eget augue imperdiet dapibus. Vivamus dapibus imperdiet bibendum.
+        Ut sit amet sem nec tellus rhoncus vulputate id a nulla. Nam egestas
+        nulla sit amet ante ornare, sit amet efficitur erat consequat. Donec
+        venenatis ante libero, sit amet tincidunt ex ultrices at.
+      </p>
+      <p>
+        Donec varius, dui nec dictum tristique, nisi nibh sollicitudin erat, ut
+        vehicula enim diam quis lectus. Donec faucibus congue libero, at
+        consectetur nulla vehicula nec. Nunc et commodo turpis. Morbi venenatis
+        lectus id metus condimentum, sed mattis risus pellentesque. Pellentesque
+        commodo ex et leo molestie varius. Donec suscipit, elit non mattis
+        efficitur, est lacus rutrum ante, eget gravida purus justo nec dui. Sed
+        blandit augue quam, in pellentesque nibh egestas at. Phasellus tincidunt
+        tempor efficitur. Nulla vulputate enim nec facilisis finibus. Vestibulum
+        consequat dictum nisl eu convallis. Mauris vulputate neque vel euismod
+        sagittis. In sagittis in eros sollicitudin dapibus.
+      </p>
+      <p>
+        Maecenas luctus at neque ut egestas. Nulla at viverra odio, eget
+        ullamcorper est. Nullam vel dolor massa. Etiam nec sapien eu erat
+        condimentum malesuada. Vivamus metus diam, dapibus vitae malesuada vel,
+        vestibulum non elit. Nunc blandit justo ipsum, nec ullamcorper odio
+        luctus at. Donec at urna tempor, fringilla tortor at, dictum tellus.
+        Duis interdum dignissim tincidunt. Aliquam orci nibh, imperdiet in
+        suscipit at, ultricies eget erat. Fusce porta lectus sed dolor
+        facilisis, et aliquet augue porta. Ut quis elit in nunc porta euismod
+        auctor et arcu. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Quisque maximus lacinia elit vitae fringilla. Integer orci ex, aliquet
+        eu felis non, volutpat ultricies urna. Suspendisse potenti.
+      </p>
+      <p>
+        Morbi venenatis aliquet enim, in hendrerit ligula ultrices vel. Quisque
+        aliquam ex a sodales bibendum. Sed eu imperdiet dolor. Curabitur cursus
+        pellentesque mi at malesuada. Vestibulum sollicitudin, neque nec semper
+        sollicitudin, ex dui ultricies nisi, id efficitur mi nisi in risus.
+        Donec pharetra feugiat aliquam. Nulla eget congue erat, pellentesque
+        vehicula odio. Aliquam cursus maximus convallis. In eu turpis orci. Duis
+        imperdiet enim non est accumsan, id molestie orci dignissim. Aliquam id
+        felis in purus ultricies faucibus id non purus. Nam ut leo lacus.
+      </p>
+    </article>
+  </body>
+</html>
