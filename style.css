@@ -1,0 +1,16 @@
+.text-gradient {
+  display: inline-block;
+  background: linear-gradient(45deg, #54d0ff, #9f92ff 20%, #ff7689 90%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 未対応ブラウザのために一応テキスト色を指定しておく */
+  color: blue;
+
+  font-size: 5rem;
+}
+
+article {
+  background: linear-gradient(45deg, #54d0ff, #9f92ff 20%, #ff7689 90%);
+  background-position: 0% 50%;
+}

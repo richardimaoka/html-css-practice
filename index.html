@@ -3,29 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .scroll-container {
-        position: sticky;
-        top: 0;
-        container-type: scroll-state;
-
-        > nav {
-          @container scroll-state(stuck: top) {
-            background: blue;
-            color: white;
-          }
-        }
-      }
-
-      article {
-        width: 600px;
-      }
-    </style>
+    <link href="/style.css" rel="stylesheet" />
   </head>
   <body>
     <div class="scroll-container">
-      <nav>scroll container</nav>
+      <nav class="text-gradient">scroll container</nav>
     </div>
     <article>
       <p>
