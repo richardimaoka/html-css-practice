@@ -1,9 +1,13 @@
+body {
+  margin: 0;
+}
+
 .container {
   display: grid;
   grid-template-columns:
-    minmax(8px, 1fr) /* minimum padding = 30px */
+    minmax(16px, 1fr) /* minimum padding = 30px */
     minmax(auto, 1000px)
-    minmax(8px, 1fr); /* minimum padding = 30px */
+    minmax(16px, 1fr); /* minimum padding = 30px */
   grid-template-areas: ". center .";
 }
 
