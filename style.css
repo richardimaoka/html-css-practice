@@ -11,13 +11,18 @@ article {
   grid-area: center;
 }
 
+.title {
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
+
 .subtitle {
   font-size: 1rem;
   font-weight: 700;
   color: rgb(119, 119, 119);
 }
 
-article > h1 {
+h1 {
   /* Cancel the default <h1> decoration */
   margin: 0;
   font-size: unset;
@@ -41,7 +46,7 @@ article > h1 {
   -webkit-text-fill-color: transparent;
 }
 
-article > h2 {
+h2 {
   /* Cancel the default <h1> decoration */
   margin: 0;
   font-size: unset;
@@ -53,7 +58,7 @@ article > h2 {
   margin-bottom: 20px;
 }
 
-article > p {
+p {
   font-weight: 700;
   color: rgb(119, 119, 119);
 }
