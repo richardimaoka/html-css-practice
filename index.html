@@ -45,19 +45,69 @@
     <div>
       <label>挙上重量(kg)</label>
       <div class="input-container">
-        <button type="button">-</button>
+        <button type="button" onclick="decrementWeight()">-</button>
         <input type="number" id="weight-input" />
-        <button type="button">+</button>
+        <button type="button" onclick="incrementWeight()">+</button>
       </div>
     </div>
 
     <div>
       <label>回数</label>
       <div class="input-container">
-        <button type="button">-</button>
-        <input type="number" id="rep-input" value="10" />
-        <button type="button">+</button>
+        <button type="button" onclick="decrementReps()">-</button>
+        <input type="number" id="reps-input" value="10" />
+        <button type="button" onclick="incrementReps()">+</button>
       </div>
     </div>
+
+    <script>
+      function incrementWeight() {
+        // Get the input element by its ID
+        const weightInput = document.getElementById("weight-input");
+
+        const currentValue = isNaN(weightInput.valueAsNumber)
+          ? 0
+          : weightInput.valueAsNumber;
+
+        // Increment the value
+        weightInput.value = currentValue + 1;
+      }
+
+      function decrementWeight() {
+        // Get the input element by its ID
+        const weightInput = document.getElementById("weight-input");
+
+        const currentValue = isNaN(weightInput.valueAsNumber)
+          ? 0
+          : weightInput.valueAsNumber;
+
+        // Decrement the value
+        weightInput.value = currentValue - 1;
+      }
+
+      function incrementReps() {
+        // Get the input element by its ID
+        const weightInput = document.getElementById("reps-input");
+
+        const currentValue = isNaN(weightInput.valueAsNumber)
+          ? 0
+          : weightInput.valueAsNumber;
+
+        // Increment the value
+        weightInput.value = currentValue + 1;
+      }
+
+      function decrementReps() {
+        // Get the input element by its ID
+        const weightInput = document.getElementById("reps-input");
+
+        const currentValue = isNaN(weightInput.valueAsNumber)
+          ? 0
+          : weightInput.valueAsNumber;
+
+        // Derement the value
+        weightInput.value = currentValue - 1;
+      }
+    </script>
   </body>
 </html>
