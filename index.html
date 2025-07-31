@@ -3,7 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Image and Div Overlay with Click Events</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      #background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      #overlay-div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.3);
+        z-index: 2;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #333;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        font-family: Arial, sans-serif;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <img
+      id="background-image"
+      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
+      alt="Background landscape"
+    />
+
+    <div id="overlay-div">Click anywhere to test event handling</div>
+
+    <script>
+      // Event handler for the image
+      document
+        .getElementById("background-image")
+        .addEventListener("click", function (event) {
+          alert("Image was clicked!");
+        });
+
+      // Event handler for the div
+      document
+        .getElementById("overlay-div")
+        .addEventListener("click", function (event) {
+          alert("Div was clicked!");
+        });
+    </script>
+  </body>
 </html>
