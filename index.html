@@ -26,22 +26,14 @@
         z-index: 1;
       }
 
-      #overlay-div {
+      #overlay-svg {
         position: absolute;
         top: 0;
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(255, 255, 255, 0.3);
         z-index: 2;
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        color: #333;
-        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-        font-family: Arial, sans-serif;
       }
     </style>
   </head>
@@ -52,7 +44,17 @@
       alt="Background landscape"
     />
 
-    <div id="overlay-div">Click anywhere to test event handling</div>
+    <svg id="overlay-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <rect
+        x="50%"
+        y="50%"
+        width="100"
+        height="200"
+        fill="rgba(255, 255, 255, 0.6)"
+        stroke="#333"
+        stroke-width="2"
+      />
+    </svg>
 
     <script>
       // Event handler for the image
@@ -62,11 +64,11 @@
           alert("Image was clicked!");
         });
 
-      // Event handler for the div
+      // Event handler for the SVG
       document
-        .getElementById("overlay-div")
+        .getElementById("overlay-svg")
         .addEventListener("click", function (event) {
-          alert("Div was clicked!");
+          alert("SVG was clicked!");
         });
     </script>
   </body>
