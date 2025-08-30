@@ -4,72 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image and Div Overlay with Click Events</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      #background-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        z-index: 1;
-      }
-
-      #overlay-svg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        z-index: 2;
-        cursor: pointer;
-      }
-    </style>
+    <link href="/style.css" rel="stylesheet" />
   </head>
-  <body>
-    <img
-      id="background-image"
-      src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"
-      alt="Background landscape"
-    />
-
-    <svg id="overlay-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <rect
-        x="50%"
-        y="50%"
-        width="100"
-        height="200"
-        fill="rgba(255, 255, 255, 0.6)"
-        stroke="#333"
-        stroke-width="2"
-      />
-    </svg>
-
-    <script>
-      // Event handler for the image
-      document
-        .getElementById("background-image")
-        .addEventListener("click", function (event) {
-          alert("Image was clicked!");
-        });
-
-      // Event handler for the SVG
-      document
-        .getElementById("overlay-svg")
-        .addEventListener("click", function (event) {
-          alert("SVG was clicked!");
-        });
-    </script>
-  </body>
+  <body></body>
 </html>
