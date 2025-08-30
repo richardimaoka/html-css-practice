@@ -1,0 +1,10 @@
+.rect {
+  width: 2rem;
+  height: 3rem;
+  background-color: grey;
+}
+
+.wiretext > * {
+  background-color: grey;
+  color: transparent;
+}
