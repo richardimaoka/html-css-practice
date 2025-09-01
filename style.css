@@ -16,6 +16,7 @@
 
 .parentContainer {
   display: grid;
+  justify-items: normal;
   grid-template-columns: auto auto auto;
 }
 
