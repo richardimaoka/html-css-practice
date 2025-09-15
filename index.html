@@ -1,12 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image and Div Overlay with Click Events</title>
-    <link href="/style.css" rel="stylesheet" />
+    <title>CSS position: sticky Test</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f0f4f8;
+        color: #1e293b;
+        line-height: 1.6;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .sticky-container {
+        position: relative;
+      }
+      .sticky-image {
+        position: sticky;
+        top: 0px;
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+      }
+      .text-block {
+        margin-bottom: 1.5rem;
+        background-color: #e2e8f0;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+      .text-block p {
+        margin-bottom: 1rem;
+      }
+    </style>
   </head>
-  <body>
-    <div class="bg" style="height: 300px">blue</div>
+  <body class="p-8">
+    <div class="container">
+      <h1 class="text-4xl font-extrabold text-center mb-6 text-slate-800">
+        position: stickyの連携テスト
+      </h1>
+      <p class="text-center text-slate-600 mb-8">
+        ページをスクロールして、2つの画像の動作を確認してください。
+      </p>
+
+      <div class="sticky-container">
+        <div class="text-block">
+          <p>
+            これは最初のセクションのテキストです。スクロールすると、最初の画像が所定の位置に「くっつく」のがわかります。
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </p>
+          <p>
+            Nunc scelerisque viverra mauris in aliquam. Orci sagittis eu
+            volutpat odio facilisis. At in tellus integer feugiat scelerisque
+            varius morbi. Volutpat maecenas volutpat blandit aliquam etiam erat.
+          </p>
+          <p>
+            Faucibus interdum posuere lorem ipsum dolor sit amet consectetur.
+            Amet consectetur adipiscing elit duis tristique sollicitudin nibh.
+            Feugiat in ante metus dictum at tempor commodo.
+          </p>
+        </div>
+
+        <img
+          src="https://placehold.co/800x400/334155/e2e8f0?text=Sticky+Image+1"
+          alt="Placeholder image 1"
+          class="sticky-image mb-12"
+          id="image1"
+        />
+
+        <div class="text-block">
+          <p>
+            最初の画像が固定された後、スクロールし続けると、最初の画像が画面外に押し出され、次の画像が所定の位置に「くっつく」のがわかります。
+          </p>
+          <p>
+            Velit euismod in pellentesque massa placerat duis ultricies.
+            Adipiscing elit ut aliquam purus sit amet luctus. Id diam maecenas
+            ultricies mi eget mauris. Ullamcorper morbi tincidunt ornare massa
+            eget egestas purus viverra. Sed egestas egestas fringilla phasellus
+            faucibus scelerisque eleifend donec. Eget sit amet tellus cras
+            adipiscing enim eu turpis egestas.
+          </p>
+          <p>
+            Leo in vitae turpis massa. Semper feugiat nibh sed pulvinar proin.
+            Vel facilisis volutpat est velit egestas dui id. Amet commodo nulla
+            facilisi nullam vehicula ipsum a. Sed felis eget velit aliquet
+            sagittis id consectetur.
+          </p>
+          <p>
+            Sit amet nisl suscipit adipiscing bibendum est ultricies. Vitae
+            elementum curabitur vitae nunc sed. Quis eleifend quam adipiscing
+            vitae proin sagittis nisl rhoncus. Aliquam ut porttitor leo a diam
+            sollicitudin tempor id.
+          </p>
+          <p>
+            Nisl nunc mi ipsum faucibus vitae aliquet. Nibh sit amet commodo
+            nulla facilisi. Et leo duis ut diam quam nulla. Blandit volutpat
+            maecenas volutpat blandit aliquam etiam erat.
+          </p>
+        </div>
+
+        <img
+          src="https://placehold.co/800x400/475569/cbd5e1?text=Sticky+Image+2"
+          alt="Placeholder image 2"
+          class="sticky-image mb-12"
+          id="image2"
+        />
+
+        <div class="text-block">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+            malesuada bibendum arcu. Integer facilisis orci eget libero
+            scelerisque, nec efficitur turpis aliquet.
+          </p>
+          <p>
+            Duis a mi eget justo ultrices ultrices. Maecenas a libero ac nisl
+            tristique hendrerit sit amet a mauris. Nullam in massa sit amet
+            ipsum interdum pharetra.
+          </p>
+          <p>
+            Vivamus vitae justo ac justo semper venenatis. Sed eleifend, purus
+            nec commodo tincidunt, justo felis dapibus elit, nec auctor felis
+            ipsum sit amet elit.
+          </p>
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Nam viverra est vel metus auctor, vel
+            mattis tortor feugiat.
+          </p>
+          <p>
+            Phasellus sed nunc a libero pulvinar egestas. Nulla facilisi.
+            Praesent sit amet arcu vitae purus efficitur feugiat. Sed vitae quam
+            nec sem eleifend pharetra non eu quam.
+          </p>
+          <p>
+            Fusce tincidunt turpis ac nulla tempor, eu bibendum lorem
+            sollicitudin. Curabitur vel purus in magna hendrerit fermentum. Nam
+            tincidunt justo vitae quam fringilla, ac convallis velit gravida.
+          </p>
+          <p>
+            Proin quis lorem in purus faucibus interdum. Suspendisse potenti.
+            Nam a elit sed odio egestas bibendum. Quisque eu justo a lorem
+            congue ullamcorper. Quisque nec elit ut enim aliquet ultrices.
+          </p>
+          <p>
+            Aenean consectetur dolor a purus fermentum, at hendrerit elit
+            eleifend. Suspendisse potenti. Morbi sed ligula ac elit tincidunt
+            malesuada. Nulla facilisi.
+          </p>
+          <p>
+            Etiam vitae quam vitae nulla feugiat iaculis. Fusce ac justo a
+            turpis gravida tincidunt at nec nisl. Vivamus a mi at quam bibendum
+            feugiat.
+          </p>
+          <p>
+            Donec vel neque vel metus convallis iaculis. Duis sed justo vel
+            libero hendrerit faucibus. Donec nec tortor eget turpis pulvinar
+            convallis.
+          </p>
+          <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+            posuere cubilia Curae; Donec in nunc vel velit venenatis interdum.
+          </p>
+          <p>
+            Aliquam vel libero a justo rhoncus bibendum. Vivamus nec magna sit
+            amet elit malesuada bibendum. Proin nec nunc nec justo gravida
+            vestibulum.
+          </p>
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Curabitur vel metus nec libero fermentum
+            varius.
+          </p>
+          <p>
+            Nam sed sapien ac odio gravida efficitur. Mauris ut metus nec justo
+            ultricies tincidunt. Nam nec elit vitae felis ultrices tristique.
+          </p>
+          <p>
+            Quisque vel libero vel metus eleifend eleifend. Sed a quam sed
+            libero tincidunt tincidunt. In hac habitasse platea dictumst.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
