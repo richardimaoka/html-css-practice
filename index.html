@@ -39,7 +39,7 @@
       }
 
       .section-paragraph {
-        margin-bottom: 30vh; /* Increase space between paragraphs to make the effect clearer */
+        margin-bottom: 160vh; /* Increase space between paragraphs to make the effect clearer */
         padding: 2rem;
         max-width: 800px;
         margin-left: auto;
@@ -72,7 +72,6 @@
 
     <script type="module">
       // Global Constants
-      const NUM_PARAGRAPHS = 10;
       const DEFAULT_COLOR = "#4b5563"; // Tailwind gray-600, used for before first and after last section
       const RECTANGLE = document.getElementById("animated-rectangle");
       const CONTENT_CONTAINER = document.getElementById("content-container");
@@ -106,15 +105,9 @@
        * Creates the ViewTimeline and applies the animation to the rectangle.
        * @param {HTMLElement} subjectElement - The element whose scroll position drives the timeline.
        * @param {string} fromColor - The color the rectangle should have when this section enters the view (0% progress).
-       * @param {string} targetColor - The color for this section when centered (50% progress).
        * @param {string} toColor - The color the rectangle should be transitioning to when this section exits the view (100% progress).
        */
-      function setupViewTimelineAnimation(
-        subjectElement,
-        fromColor,
-        targetColor,
-        toColor
-      ) {
+      function setupViewTimelineAnimation(subjectElement, fromColor, toColor) {
         try {
           // 1. Create the ViewTimeline instance
           const viewTimeline = new ViewTimeline({
@@ -122,26 +115,14 @@
             axis: "block", // Vertical axis
           });
 
-          // 2. Define Keyframes and Options for the Animation
-          const lightShadow = "0 10px 15px -3px rgba(0, 0, 0, 0.1)";
-          // Create a vibrant shadow based on the target color
-          const targetShadow = `0 25px 50px -12px ${hexToRgba(
-            targetColor,
-            0.5
-          )}`;
-
           const keyframes = [
             // Start state (0% timeline progress: Subject enters viewport)
             // Color transitions smoothly from the previous section's color (or default)
-            { backgroundColor: fromColor, boxShadow: lightShadow },
-
-            // Mid-point state (50% timeline progress: Subject centered)
-            // Fully commits to the current section's color and shadow
-            { backgroundColor: targetColor, boxShadow: targetShadow },
+            { backgroundColor: fromColor },
 
             // End state (100% timeline progress: Subject leaves viewport)
             // Color transitions smoothly toward the next section's color (or default)
-            { backgroundColor: toColor, boxShadow: lightShadow },
+            { backgroundColor: toColor },
           ];
 
           const animationOptions = {
@@ -177,37 +158,31 @@
        * Generates the content and initializes all animations.
        */
       function initializeDemo() {
-        const N = NUM_PARAGRAPHS;
-
         // Generate content elements and set up animations
-        for (let i = 0; i < N; i++) {
-          const targetColor = COLORS[i % COLORS.length];
-          const sectionId = `section-${i + 1}`;
-          const titleText = `Section ${i + 1}: The ${targetColor} Driver`;
-
+        for (let i = 0; i < COLORS.length; i++) {
           // Determine the color it transitions FROM: previous paragraph's target color, or default for the first.
-          const fromColor =
-            i === 0 ? DEFAULT_COLOR : COLORS[(i - 1) % COLORS.length];
+          const fromColor = COLORS[i];
 
           // Determine the color it transitions TO: next paragraph's target color, or default for the last.
-          const toColor =
-            i === N - 1 ? DEFAULT_COLOR : COLORS[(i + 1) % COLORS.length];
+          const toColor = i === COLORS.length - 1 ? COLORS[0] : COLORS[i + 1];
+
+          const sectionId = `section-${i + 1}`;
+          const titleText = `Section ${i + 1}: The ${toColor} Driver`;
 
           console.log(i, "==========================================");
           console.log("fromColor", fromColor);
-          console.log("targetColor", targetColor);
           console.log("toColor", toColor);
 
           // 1. Create the section element
           const sectionElement = document.createElement("div");
           sectionElement.id = sectionId;
           sectionElement.className = "section-paragraph border-l-4 p-6";
-          sectionElement.style.borderColor = targetColor; // Use the color for a visual indicator
+          sectionElement.style.borderColor = toColor; // Use the color for a visual indicator
 
           sectionElement.innerHTML = `
-                    <h3 class="text-xl font-bold mb-3" style="color: ${targetColor};">${titleText}</h3>
+                    <h3 class="text-xl font-bold mb-3" style="color: ${toColor};">${titleText}</h3>
                     <p class="text-gray-600">
-                        This section's visibility is driving the animation above. 
+                        This section's visibility is driving the animation above.
                         It enters the view transitioning from **${fromColor}** and exits transitioning to **${toColor}**.
                         This chaining makes the color blend seamless as you scroll!
                     </p>
@@ -219,12 +194,7 @@
           CONTENT_CONTAINER.appendChild(sectionElement);
 
           // 2. Setup the ViewTimeline and Animation with chained colors
-          setupViewTimelineAnimation(
-            sectionElement,
-            fromColor,
-            targetColor,
-            toColor
-          );
+          setupViewTimelineAnimation(sectionElement, fromColor, toColor);
         }
       }
 
