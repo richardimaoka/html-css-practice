@@ -193,6 +193,11 @@
           const toColor =
             i === N - 1 ? DEFAULT_COLOR : COLORS[(i + 1) % COLORS.length];
 
+          console.log(i, "==========================================");
+          console.log("fromColor", fromColor);
+          console.log("targetColor", targetColor);
+          console.log("toColor", toColor);
+
           // 1. Create the section element
           const sectionElement = document.createElement("div");
           sectionElement.id = sectionId;
