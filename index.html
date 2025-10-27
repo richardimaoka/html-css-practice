@@ -2,16 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>React</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module">
-      import React from "https://esm.sh/react@19";
-      import { createRoot } from "https://esm.sh/react-dom@19/client";
-
-      const root = createRoot(document.getElementById("root"));
-      root.render(React.createElement("h1", null, "React hello world"));
-    </script>
+    <div id="root">
+      <span class="datepicker-toggle">
+        <span class="datepicker-toggle-button"></span>
+        <input type="date" class="datepicker-input" />
+      </span>
+    </div>
   </body>
 </html>
