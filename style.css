@@ -3,6 +3,10 @@ body {
   margin: 2rem;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 header {
   view-transition-name: header;
 }
