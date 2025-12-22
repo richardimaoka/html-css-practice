@@ -11,6 +11,10 @@ header {
   view-transition-name: header;
 }
 
+main {
+  view-transition-name: main;
+}
+
 @keyframes slide-out {
   from {
     transform: translateX(0);
@@ -33,10 +37,10 @@ header {
   }
 }
 
-::view-transition-old(root) {
+::view-transition-old(main) {
   animation: 300ms ease-out both slide-out;
 }
 
-::view-transition-new(root) {
+::view-transition-new(main) {
   animation: 300ms ease-out both slide-in;
 }
