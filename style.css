@@ -1,46 +1,12 @@
-body {
-  font-family: sans-serif;
-  margin: 2rem;
+.container {
+  display: flex;
+  justify-content: stretch;
+  gap: 16px;
 }
 
-@view-transition {
-  navigation: auto;
-}
-
-header {
-  view-transition-name: header;
-}
-
-main {
-  view-transition-name: main;
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-::view-transition-old(main) {
-  animation: 300ms ease-out both slide-out;
-}
-
-::view-transition-new(main) {
-  animation: 300ms ease-out both slide-in;
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  flex-grow: 1;
 }
