@@ -1,12 +1,15 @@
-.container {
-  display: flex;
-  justify-content: stretch;
-  gap: 16px;
+html,
+body {
+  margin: 0;
 }
 
-.item {
-  width: 100px;
-  height: 100px;
-  background-color: gray;
-  flex-grow: 1;
+.container {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
 }
