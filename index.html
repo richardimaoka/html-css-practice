@@ -1,24 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" style="overflow: auto; scroll-snap-type: y mandatory">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <meta name="view-transition" content="same-origin" />
     <title>MPA View Transitions - Page 1</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <video
-        className="{styles.video}"
-        muted
-        playsinline
-        loop
-        src="/1080x1920 mieru taimu.mp4"
-        poster="/1080x1920 mieru taimu.png"
-        width="1080"
-        height="1920"
-      />
-    </div>
+    <div
+      style="scroll-snap-align: start; height: 700px; background-color: blue"
+    ></div>
+    <div
+      style="
+        scroll-snap-align: start;
+        height: 700px;
+        background-color: rgb(9, 9, 95);
+      "
+    ></div>
+    <div
+      style="
+        scroll-snap-align: start;
+        height: 700px;
+        background-color: rgb(86, 86, 141);
+      "
+    ></div>
   </body>
 </html>
