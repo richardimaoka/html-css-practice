@@ -1,8 +1,5 @@
 <!doctype html>
-<html
-  lang="en"
-  style="overflow: auto; scroll-snap-type: y mandatory; height: 100vh"
->
+<html lang="en" style="overflow: auto; scroll-snap-type: y mandatory">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -14,12 +11,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div
-      style="  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-}"
-    >
+    <div style="max-width: 480px; margin-left: auto; margin-right: auto">
       <video
         style="scroll-snap-align: center; width: 100%; height: auto"
         muted
@@ -52,4 +44,7 @@
       ></video>
     </div>
   </body>
+  <script>
+    window.scrollTo({ top: 100 });
+  </script>
 </html>
