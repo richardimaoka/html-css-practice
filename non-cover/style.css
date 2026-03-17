@@ -1,0 +1,25 @@
+html,
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+#rect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}

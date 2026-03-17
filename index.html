@@ -1,38 +1,85 @@
 <!doctype html>
-<html
-  lang="en"
-  style="overflow-x: hidden; overflow-y: auto; scroll-snap-type: y mandatory"
->
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-    />
-    <meta name="view-transition" content="same-origin" />
-    <title>MPA View Transitions - Page 1</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Header Demo</title>
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f9;
+      }
+
+      /* The Sticky Header */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+
+        /* Glassmorphism Effect */
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: 500;
+      }
+
+      /* Page Content */
+      .hero {
+        height: 400px;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+
+      main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      section {
+        margin-bottom: 3rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 2rem;
+        color: #777;
+      }
+    </style>
   </head>
   <body>
-    <div id="rect" style="background-color: blue; height: 100dvh"></div>
+    <header>
+      <h2>BrandLogo</h2>
+      <nav>
+        <a href="#">Home</a>
+      </nav>
+    </header>
+    <div style="height: 2500px"></div>
   </body>
-  <script>
-    const rectElement = document.getElementById("rect");
-
-    function updateDimensions() {
-      // Get the width and height
-      const dims = rectElement.getBoundingClientRect();
-      const width = Math.round(dims.width);
-      const height = Math.round(dims.height);
-
-      // Update the text inside the div
-      rectElement.innerText = `${width}px × ${height}px`;
-    }
-
-    // Run on initial load
-    updateDimensions();
-
-    // Update if the window is resized
-    window.addEventListener("resize", updateDimensions);
-  </script>
 </html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html
+  lang="en"
+  style="overflow-x: hidden; overflow-y: auto; scroll-snap-type: y mandatory"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="view-transition" content="same-origin" />
+    <title>MPA View Transitions - Page 1</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="rect" style="background-color: blue; height: 2000px"></div>
+  </body>
+  <script>
+    const rectElement = document.getElementById("rect");
+
+    function updateDimensions() {
+      // Get the width and height
+      const dims = rectElement.getBoundingClientRect();
+      const width = Math.round(dims.width);
+      const height = Math.round(dims.height);
+
+      // Update the text inside the div
+      rectElement.innerText = `${width}px × ${height}px`;
+    }
+
+    // Run on initial load
+    updateDimensions();
+
+    // Update if the window is resized
+    window.addEventListener("resize", updateDimensions);
+  </script>
+  c
+</html>
